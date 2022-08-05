@@ -12,8 +12,10 @@ describe('UploaderController', () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [UploaderController],
       providers: [
-        UploaderController,
-        { provide: UploaderService, useValue: { saveImage: saveImageMock } },
+        {
+          provide: UploaderService,
+          useValue: { saveImage: saveImageMock },
+        },
       ],
     }).compile();
 
