@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { BlobModule } from '@czarpoliedros/blob';
 import { Image, ImageSchema } from './entities/image.schema';
 import { UploaderController } from './uploader.controller';
+import { UploaderService } from './uploader.service';
 
 @Module({
   imports: [
@@ -15,5 +16,6 @@ import { UploaderController } from './uploader.controller';
     MongooseModule.forFeature([{ name: Image.name, schema: ImageSchema }]),
   ],
   controllers: [UploaderController],
+  providers: [UploaderService],
 })
 export class UploaderModule {}
